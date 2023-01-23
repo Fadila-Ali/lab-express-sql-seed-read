@@ -5,11 +5,18 @@ const {
   checkName,
   checkArtist,
 } = require("../validations/checkSongs");
-const { getAllSongs, getSong, createSong } = require("../queries/songs");
+const {
+  getAllSongs,
+  getSong,
+  createSong,
+  deleteSong,
+  updateSong,
+} = require("../queries/songs");
 
 // INDEX
 songs.get("/", async (req, res) => {
   const allSongs = await getAllSongs();
+  console.log(getAllSongs());
   if (allSongs[0]) {
     res.status(200).json(allSongs);
   } else {
@@ -35,6 +42,28 @@ songs.post("/", checkBoolean, checkName, checkArtist, async (req, res) => {
     res.json(song);
   } catch (error) {
     res.status(400).json({ error: error });
+  }
+});
+
+// DELETE SONG
+songs.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedSong = await deleteSong(id);
+  if (deletedSong.id) {
+    res.status(200).json(deletedSong);
+  } else {
+    res.status(404).json("Song not found");
+  }
+});
+
+// UPDATE SONG
+songs.put("/:id", checkName, checkBoolean, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedSong = await updateSong(id, req.body);
+    res.status(200).json(updatedSong);
+  } catch (error) {
+    res.status(404).json({ error: "Song not found" });
   }
 });
 

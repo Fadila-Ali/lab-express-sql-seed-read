@@ -2,6 +2,10 @@
 
 Let's make our own music playlist app!
 
+## Here is the Link to the Frontend
+
+https://github.com/Fadila-Ali/tuner-frontend
+
 ![](https://media4.giphy.com/media/4T7zBzdeNEtjThYDWn/giphy.gif?cid=790b76114ee03ef7f860492a9083d77f86191a7bf340002c&rid=giphy.gif&ct=g)
 
 ## Multiple Session Lab/Activity
@@ -51,7 +55,6 @@ Don't forget to update your environmental variables to that you can connect to y
 - create a route `/` that says something like `Welcome to Tuner`
 - create a route `/songs` that shows the array of songs you've created
 - create a 404 route that when a user tries to access a route that doesn't exist, they will see this page
-
 
 ### Bonus
 
@@ -111,10 +114,9 @@ Add functionality where if a user goes to
 - `/songs?is_favorite=true` it will only show the songs where the value of `is_favorite` is true
 - `/songs?is_favorite=false` it will only show the songs where the value of `is_favorite` is false
 
-
 # [Part 4 is a React App, see other readme for more details](https://github.com/9-1-pursuit/tuner-frontend)
 
-## Part 5 
+## Part 5
 
 You should build at least one one-to-many resource. Choose one of the following:
 
@@ -122,13 +124,12 @@ You should build at least one one-to-many resource. Choose one of the following:
 - Build a One-to-Many so that `One Album has many songs` for both the front end and the back end
 - Build a One-to-Many so that `One Artist has many songs` for both the front end and the back end
 
-
 ### Bonuses
+
 - Build a way to see the Songs on an Album
 - Tidy up the UI/UX so this app is easy to use for anyone
 
-
-For addtional practice keep building out the app. Learning to work with a more complex app is an important skill. 
+For addtional practice keep building out the app. Learning to work with a more complex app is an important skill.
 
 ## SUPER BONUS Part 6
 
