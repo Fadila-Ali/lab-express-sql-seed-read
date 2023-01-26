@@ -1,5 +1,5 @@
 const express = require("express");
-const songs = express.Router();
+const songs = express.Router({ mergeParams: true });
 const {
   checkBoolean,
   checkName,
@@ -12,6 +12,13 @@ const {
   deleteSong,
   updateSong,
 } = require("../queries/songs");
+
+// IMPORTING REVIEW CONTROLLER, PLAYLIST CONTROLLER
+const reviewsController = require("./reviewsController");
+// const playlistsController = require("./playlistsController");
+// const albumsController = require("./albumsController");
+
+songs.use("/:songId/reviews", reviewsController);
 
 // INDEX
 songs.get("/", async (req, res) => {
