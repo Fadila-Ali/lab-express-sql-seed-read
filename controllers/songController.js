@@ -23,8 +23,8 @@ songs.use("/:songId/reviews", reviewsController);
 // INDEX
 songs.get("/", async (req, res) => {
   const allSongs = await getAllSongs();
-  console.log(getAllSongs());
-  if (allSongs[0]) {
+  console.log("All songs: ", getAllSongs());
+  if (allSongs && allSongs.length > 0) {
     res.status(200).json(allSongs);
   } else {
     res.status(500).json({ error: "server error" });
