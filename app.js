@@ -2,6 +2,7 @@
 const cors = require("cors");
 const express = require("express");
 const pgp = require('pg-promise')();
+const db = pgp(process.env.DATABASE_URL);
 const songController = require("./controllers/songController.js");
 const playlistsController = require("./controllers/playlistsController");
 const albumsController = require("./controllers/albumsController")
@@ -23,7 +24,7 @@ const pgUser = process.env.PG_USER;
 const pgPassword = process.env.PG_PASSWORD;
 
 //! DATABASE CONNECTION
-const db = pgp(`postgres://${pgUser}:${pgPassword}@${pgHost}:${pgPort}/${pgDatabase}`);
+// const db = pgp(`postgres://${pgUser}:${pgPassword}@${pgHost}:${pgPort}/${pgDatabase}`);
 
 
 db.connect()
